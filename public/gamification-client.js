@@ -1,4 +1,4 @@
-var GAMIFICATION_SERVER_URL = "https://starreider-gamification.herokuapp.com";
+var GAMIFICATION_SERVER_URL = "https://heroku-gamification.herokuapp.com";
 
 function updateLeaderBoard() {
 	$.ajax({

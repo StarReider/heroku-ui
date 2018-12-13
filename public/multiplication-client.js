@@ -1,4 +1,4 @@
-var MULTIPLICATION_SERVER_URL = "https://starreider-multiplication.herokuapp.com";
+var MULTIPLICATION_SERVER_URL = "https://heroku-multiplication.herokuapp.com";
 
 function updateMultiplication() {
 	$.ajax({
