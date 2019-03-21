@@ -1,8 +1,6 @@
-var MULTIPLICATION_SERVER_URL = "https://heroku-multiplication.herokuapp.com";
-
 function updateMultiplication() {
 	$.ajax({
-		url : MULTIPLICATION_SERVER_URL + "/multiplications/random"
+		url : GATEWAY_SERVER_URL + "/multiplications/random"
 	}).then(function(data) {
 		// Cleans the form
 		$("#attempt-form").find("input[name='result-attempt']").val("");
@@ -18,7 +16,7 @@ function updateResults(alias) {
 	var userId = -1;
 	$.ajax({
 		async : false,
-		url : MULTIPLICATION_SERVER_URL + "/results?alias=" + alias,
+		url : GATEWAY_SERVER_URL + "/results?alias=" + alias,
 		success : function(data) {
 			$('#results-div').show();
 			$('#results-body').empty();
@@ -73,7 +71,7 @@ $(document).ready(function() {
 
 		// Send the data using post
 		$.ajax({
-			url : MULTIPLICATION_SERVER_URL + '/results',
+			url : GATEWAY_SERVER_URL + '/results',
 			type : 'POST',
 			data : JSON.stringify(data),
 			contentType : "application/json; charset=utf-8",
