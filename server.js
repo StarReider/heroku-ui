@@ -10,6 +10,8 @@ app.use('/css', express.static(__dirname + '/public/css'));
 app.use('/fonts', express.static(__dirname + '/public/fonts'));
 app.use('/js', express.static(__dirname + '/public/js'));
 
+app.set('GATEWAY_SERVER_URL', process.env.GATEWAY_SERVER_URL);
+
 var server = app.listen(PORT, function(){
     var port = server.address().port;
     console.log("Server started at http://localhost:%s", port);
