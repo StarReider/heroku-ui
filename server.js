@@ -10,7 +10,7 @@ app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/public');
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
 //make way for some custom css, js and images
 app.use('/css', express.static(__dirname + '/public/css'));
 app.use('/fonts', express.static(__dirname + '/public/fonts'));
