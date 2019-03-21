@@ -1,8 +1,6 @@
-var GAMIFICATION_SERVER_URL = "https://heroku-gamification.herokuapp.com";
-
 function updateLeaderBoard() {
 	$.ajax({
-		url : GAMIFICATION_SERVER_URL + "/leaders"
+		url : process.env.GATEWAY_SERVER_URL + "/leaders"
 	}).then(
 			function(data) {
 				$('#leaderboard-body').empty();
@@ -16,7 +14,7 @@ function updateLeaderBoard() {
 
 function updateStats(userId) {
 	$.ajax({
-		url : GAMIFICATION_SERVER_URL + "/stats?userId=" + userId,
+		url : process.env.GATEWAY_SERVER_URL + "/stats?userId=" + userId,
 		success : function(data) {
 			$('#stats-div').show();
 			$('#stats-user-id').empty().append(userId);
