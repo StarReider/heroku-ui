@@ -1,6 +1,7 @@
 function updateLeaderBoard() {
 	$.ajax({
-		url : GATEWAY_SERVER_URL + "/leaders"
+		url : GATEWAY_SERVER_URL + "/leaders",
+		crossDomain: true
 	}).then(
 			function(data) {
 				$('#leaderboard-body').empty();
@@ -15,6 +16,7 @@ function updateLeaderBoard() {
 function updateStats(userId) {
 	$.ajax({
 		url : GATEWAY_SERVER_URL + "/stats?userId=" + userId,
+		crossDomain: true,
 		success : function(data) {
 			$('#stats-div').show();
 			$('#stats-user-id').empty().append(userId);

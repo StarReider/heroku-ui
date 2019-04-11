@@ -1,6 +1,7 @@
 function updateMultiplication() {
 	$.ajax({
-		url : GATEWAY_SERVER_URL + "/multiplications/random"
+		url : GATEWAY_SERVER_URL + "/multiplications/random",
+		crossDomain: true
 	}).then(function(data) {
 		// Cleans the form
 		$("#attempt-form").find("input[name='result-attempt']").val("");
@@ -17,6 +18,7 @@ function updateResults(alias) {
 	$.ajax({
 		async : false,
 		url : GATEWAY_SERVER_URL + "/results?alias=" + alias,
+		crossDomain: true,
 		success : function(data) {
 			$('#results-div').show();
 			$('#results-body').empty();
@@ -76,6 +78,7 @@ $(document).ready(function() {
 			data : JSON.stringify(data),
 			contentType : "application/json; charset=utf-8",
 			dataType : "json",
+			crossDomain: true,
 			success : function(result) {
 				if (result.correct) {
 					$('.result-message')
