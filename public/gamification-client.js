@@ -1,5 +1,6 @@
 function updateLeaderBoard() {
 	$.ajax({
+		type: "GET",
 		url : GATEWAY_SERVER_URL + "/leaders",
 		crossDomain: true
 	}).then(

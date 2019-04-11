@@ -1,5 +1,6 @@
 function updateMultiplication() {
 	$.ajax({
+		type: "GET",
 		url : GATEWAY_SERVER_URL + "/multiplications/random",
 		crossDomain: true
 	}).then(function(data) {
